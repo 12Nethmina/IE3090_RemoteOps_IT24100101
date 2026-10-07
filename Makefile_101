@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -pedantic
+PTHREAD = -pthread
+
+all: agent_101 controller_101
+
+agent_101: agent_101.c
+	$(CC) $(CFLAGS) agent_101.c -o agent_101 $(PTHREAD)
+
+controller_101: controller_101.c
+	$(CC) $(CFLAGS) controller_101.c -o controller_101 $(PTHREAD)
+
+clean:
+	rm -f agent_101 controller_101
